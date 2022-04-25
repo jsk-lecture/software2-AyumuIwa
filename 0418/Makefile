@@ -1,7 +1,7 @@
 all: comment indent define getopt
 
-comment: test-comment.c
-	gcc -o test-comment test-comment.c
+comment: test0-comment.c
+	gcc -o test0-comment test0-comment.c
 	# extract comment
 	# https://stackoverflow.com/questions/47565090/need-help-to-extract-comments-from-c-file
 	cat test-comment.c | awk '/\/\// {print $0}; /\/\*/ {aux=1}; {if(aux) print $0}; /\*\// {aux=0}' | sed '/^$$/d' | tee /tmp/test-comment.txt
